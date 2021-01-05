@@ -32,7 +32,7 @@ $(document).ready(function () {
             username: $('#form_reg input[name=username]').val(),
             password: $('#form_reg input[name=password]').val()
         }
-        $.post("http://ajax.frontend.itheima.net/api/reguser", data, function (res) {
+        $.post("/api/reguser", data, function (res) {
             console.log(res)
             if (res.status !== 0) {
                 return layer.msg('注册失败')
@@ -47,7 +47,7 @@ $(document).ready(function () {
         e.preventDefault()
         $.ajax({
             method: "POST",
-            url: "http://ajax.frontend.itheima.net/api/login",
+            url: "/api/login",
             data: $(this).serialize(),
             success: function (res) {
                 if (res.status !== 0) {
