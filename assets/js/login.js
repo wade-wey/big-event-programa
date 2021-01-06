@@ -53,8 +53,9 @@ $(document).ready(function () {
                 if (res.status !== 0) {
                     return layer.msg('登陆失败')
                 }
-                console.log(res)
+                console.log(res.token)
                 layer.msg('登陆成功')
+                window.localStorage.setItem('token', res.token)
                 location.href = '/index.html'
             }
         })
